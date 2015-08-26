@@ -1,0 +1,27 @@
+{
+  "name": "markusos/scrape",
+  "description": "A simple web scraper",
+  "version": "0.1",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Markus Östberg",
+      "email": "markusos@kth.se",
+      "homepage": "http://markusos.github.io/",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "guzzlehttp/guzzle": "~6.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.4.*",
+    "codeclimate/php-test-reporter": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Scrape\\": "src/Scrape"
+    }
+  }
+}
