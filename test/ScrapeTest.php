@@ -4,7 +4,7 @@ class ScrapeTest extends \PHPUnit_Framework_TestCase
 {
     public function testWikiScrape()
     {
-        (new WikiScraper())->scrapeWikipedia();
+        (new WikiCrawler())->getArticles(10);
     }
 
     public function testBasicScrape() {
@@ -28,5 +28,14 @@ class ScrapeTest extends \PHPUnit_Framework_TestCase
             echo $excerptElement->nodeValue . PHP_EOL;
             echo "----------------" . PHP_EOL;
         }
+    }
+
+    /**
+     * @expectedException              \RuntimeException
+     * @expectedExceptionMessageRegExp /Connection timed out after 10\d+ milliseconds/
+     */
+    public function testTimeOut() {
+        $scraper = new Scrape('http://www.google.com:81', 1);
+        $scraper->load('/');
     }
 }

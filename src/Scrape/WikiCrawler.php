@@ -1,8 +1,8 @@
 <?php namespace Scrape;
 
-class WikiScraper
+class WikiCrawler
 {
-    public function scrapeWikipedia()
+    public function getArticles($number = 100)
     {
         $scrapeCount = 0;
         $found = array();
@@ -11,7 +11,7 @@ class WikiScraper
         $scraper = new Scrape('https://en.wikipedia.org');
         $pageQueue->enqueue('/');
 
-        while ($scrapeCount < 100 ) {
+        while ($scrapeCount < $number ) {
             $nextPage = $pageQueue->dequeue();
             try {
                 $page = $scraper->load($nextPage);
