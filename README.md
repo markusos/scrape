@@ -1,10 +1,10 @@
-#Scrape
+# Scrape
 
 A minimal web scraper using Guzzle and PHP's DOM parser.
 
 You can find a short introduction to webparsing using Scrape [here!](http://markusos.github.io/projects/2015/08/25/how-to-build-a-web-scraper.html)
 
-###Example
+### Example
 
 ```php
 <?php
@@ -34,7 +34,7 @@ var_dump($data);
 
 ```
 
-###License
+### License
 
 The MIT License (MIT)
 
